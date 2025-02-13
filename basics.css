@@ -1,0 +1,273 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(238, 231, 227);
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: rgb(246, 183, 154);
+    flex-wrap: wrap;
+}
+
+.navbar {
+    width: 80px;
+    background-color: rgb(240, 154, 132);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+    border-right: 1px solid #eaeaea;
+}
+
+.navbar div {
+    height: 400;
+    font-size: 20px;
+    color:black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border-radius: 10%;
+    border: 1px solid black;
+}
+
+.navbar div:hover {
+    color:blue;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
+.content {
+  margin:0px;
+  padding:40px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(247, 227, 218);
+  color:black;
+  font-family:'Roboto';
+  font-size:36px;
+  overflow:hidden;
+  animation:bg 5s linear infinite;
+  flex:1;
+  width: 400px;
+}
+
+.dropping-texts {
+  display: inline-block;
+  width: 180px;
+  text-align: left;
+  height: 36px;
+  vertical-align: -2px;
+}
+
+.dropping-texts > div {
+  font-size:0px;
+  opacity:0;
+  margin-left:-30px;
+  position:absolute;
+  font-weight:100;   
+  box-shadow: 0px 60px 25px -20px rgba(0,0,0,0.5);
+}
+
+.dropping-texts > div:nth-child(1) {
+  animation: roll 5s linear infinite 0s;
+}
+.dropping-texts > div:nth-child(2) {
+  animation: roll 5s linear infinite 1s;
+}
+.dropping-texts > div:nth-child(3) {
+  animation: roll 5s linear infinite 2s;
+}
+/* .dropping-texts > div:nth-child(4) {
+  animation: roll2 5s linear infinite 3s;
+} */
+
+@keyframes roll {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  3% {
+    opacity:1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+  }
+  20% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(0deg);
+  }
+  27% {
+    font-size:0px;
+    opacity:0.5;
+    margin-left:20px;
+    margin-top:100px;
+  }
+ 
+}
+
+@keyframes roll2 {
+  0% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(-25deg);
+  }
+  3% {
+    opacity:1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+  }
+  30% {
+    font-size:inherit;
+    opacity:1;
+    margin-left:0px;
+    margin-top:0px;
+    transform: rotate(0deg);
+  }
+  37% {
+    font-size:1500px;
+    opacity:0;
+    margin-left:-1000px;
+    margin-top:-800px;
+  }
+  100% {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    margin-top:0px;
+    transform: rotate(15deg);
+  }
+}
+
+.c1:hover{
+    color: #100f0f;
+}
+.c2:hover{
+    color: #100f0f;
+}
+.c3:hover{
+    color: #100f0f;
+}
+.c4:hover{
+    color: #100f0f;
+}
+.inside-navbar {
+    background-color: rgb(240, 210, 194);
+    border-radius: 10px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 100vh;
+    max-height: max-content;
+}
+
+.inside-navbar h3 {
+    color:black;
+}
+
+.c1, .c2, .c3, .c4 {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    width: 500px;
+    margin: 20px;
+    padding:10px;
+    font-size: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:rgb(235, 235, 247)
+}
+
+.c1 {
+    background-image: url('ed.jpg');
+
+}
+
+.c2 {
+    background-image: url('image.png');
+  
+}
+
+.c3 {
+    background-image: url('ed.jpg');
+
+}
+
+.c4 {
+    background-image: url('image.png');
+
+}
+
+.c1:hover, .c2:hover, .c3:hover, .c4:hover {
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+    
+    .navbar {
+        width: 60px;
+    }
+    
+    .overview {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
+        z-index: 100;
+    }
+    
+    .content {
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+}
